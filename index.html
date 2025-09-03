@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Café</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url("https://picsum.photos/1200/500?coffee") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Contact form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    input, textarea, button {
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #333;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>☕ Local Café</h2>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Fresh Coffee, Local Vibes</h1>
+    <p>Your daily dose of energy.</p>
+  </section>
+
+  <section id="menu" class="container">
+    <h2>Our Menu</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Espresso</h3>
+        <p>₹80</p>
+      </div>
+      <div class="card">
+        <h3>Cappuccino</h3>
+        <p>₹120</p>
+      </div>
+      <div class="card">
+        <h3>Cold Brew</h3>
+        <p>₹150</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="container">
+    <h2>About Us</h2>
+    <p>We’re a small café in town serving freshly brewed coffee, homemade snacks, and a cozy atmosphere since 2015. Come hang out with us!</p>
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formResponse" style="margin-top:1rem; color:green; display:none;">
+      ✅ Thank you! We’ll get back to you soon.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Local Café. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simple JS form handling
+    const form = document.getElementById("contactForm");
+    const response = document.getElementById("formResponse");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      response.style.display = "block";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
